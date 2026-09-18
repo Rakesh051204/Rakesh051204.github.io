@@ -1,1 +1,1 @@
-# github.com-Rakesh051204-Rakesh051204.github.io
+# Rakesh051204.github.io
