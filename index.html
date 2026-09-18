@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rakesh Palani — Data Scientist &amp; AI/ML Engineer</title>
+<title>Rakesh Palani — AI/ML Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #10131A;
-    --surface: #171B24;
-    --surface-2: #1E2330;
-    --line: #2A3040;
-    --text: #E9E7E1;
+    --bg: #0D0F14;
+    --surface: #151822;
+    --surface-2: #1B1F2C;
+    --line: #262B3A;
+    --text: #ECEAE4;
     --text-dim: #9AA0AE;
-    --text-faint: #626878;
+    --text-faint: #5C6272;
     --amber: #E8A33D;
     --teal: #4FD1C5;
     --font-display: 'Space Grotesk', sans-serif;
@@ -25,250 +25,112 @@
   :root:not([data-theme="light"]) { color-scheme: dark; }
   @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
-      --bg: #F7F6F3;
-      --surface: #FFFFFF;
-      --surface-2: #EFEDE8;
-      --line: #DDDAD2;
-      --text: #181A1F;
-      --text-dim: #5C6270;
-      --text-faint: #8C90A0;
+      --bg: #F7F6F3; --surface: #FFFFFF; --surface-2: #EFEDE8;
+      --line: #DDDAD2; --text: #181A1F; --text-dim: #5C6270; --text-faint: #8C90A0;
     }
   }
   :root[data-theme="light"] {
-    --bg: #F7F6F3;
-    --surface: #FFFFFF;
-    --surface-2: #EFEDE8;
-    --line: #DDDAD2;
-    --text: #181A1F;
-    --text-dim: #5C6270;
-    --text-faint: #8C90A0;
+    --bg: #F7F6F3; --surface: #FFFFFF; --surface-2: #EFEDE8;
+    --line: #DDDAD2; --text: #181A1F; --text-dim: #5C6270; --text-faint: #8C90A0;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   a { color: inherit; }
-  .wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-  ::selection { background: var(--amber); color: #10131A; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 28px; }
+  ::selection { background: var(--amber); color: #0D0F14; }
 
-  /* ---- Nav ---- */
-  nav {
-    position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-    max-width: 780px;
-  }
-  .nav-mark {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--amber);
-  }
-  .nav-links {
-    display: flex; gap: 22px;
-    font-size: 14px;
-    color: var(--text-dim);
-  }
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; max-width: 820px; }
+  .nav-mark { font-family: var(--font-mono); font-size: 14px; color: var(--amber); }
+  .nav-links { display: flex; gap: 20px; font-size: 13.5px; color: var(--text-dim); }
   .nav-links a { text-decoration: none; transition: color .15s; }
   .nav-links a:hover { color: var(--text); }
 
-  /* ---- Hero ---- */
-  header.hero {
-    padding: 76px 0 56px;
-    border-bottom: 1px solid var(--line);
-  }
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-faint);
-    margin-bottom: 18px;
-  }
+  header.hero { padding: 80px 0 52px; border-bottom: 1px solid var(--line); }
+  .eyebrow { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); margin-bottom: 18px; }
   .eyebrow .dot { color: var(--teal); }
-  h1.headline {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(34px, 5vw, 50px);
-    line-height: 1.12;
-    letter-spacing: -0.01em;
-    max-width: 11ch;
-  }
+  h1.headline { font-family: var(--font-display); font-weight: 600; font-size: clamp(32px, 5vw, 48px); line-height: 1.14; letter-spacing: -0.01em; max-width: 13ch; }
   .headline .accent { color: var(--amber); }
-  .sub {
-    margin-top: 20px;
-    max-width: 46ch;
-    color: var(--text-dim);
-    font-size: 17px;
-  }
-  .hero-links {
-    margin-top: 30px;
-    display: flex; flex-wrap: wrap; gap: 10px;
-  }
-  .hero-links a {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-decoration: none;
-    border: 1px solid var(--line);
-    padding: 8px 14px;
-    border-radius: 3px;
-    color: var(--text);
-    transition: border-color .15s, background .15s;
-  }
+  .sub { margin-top: 20px; max-width: 52ch; color: var(--text-dim); font-size: 16.5px; }
+  .hero-links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero-links a { font-family: var(--font-mono); font-size: 13px; text-decoration: none; border: 1px solid var(--line); padding: 8px 14px; border-radius: 3px; color: var(--text); transition: border-color .15s, background .15s; }
   .hero-links a:hover { border-color: var(--amber); background: var(--surface); }
-  .hero-links a.primary {
-    background: var(--amber);
-    border-color: var(--amber);
-    color: #10131A;
-    font-weight: 600;
-  }
-  .hero-links a.primary:hover { opacity: .9; background: var(--amber); }
+  .hero-links a.primary { background: var(--amber); border-color: var(--amber); color: #0D0F14; font-weight: 600; }
+  .hero-links a.primary:hover { opacity: .9; }
+  .contact-line { margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-faint); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .contact-line a { text-decoration: none; color: var(--text-faint); }
+  .contact-line a:hover { color: var(--teal); }
+  .spark { margin-top: 36px; opacity: .9; }
 
-  .spark { margin-top: 40px; opacity: .9; }
-
-  /* ---- Sections ---- */
-  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 52px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
-  .section-head {
-    display: flex; align-items: baseline; gap: 12px;
-    margin-bottom: 28px;
-  }
-  .section-num {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-faint);
-  }
-  h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 22px;
-  }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 26px; }
+  .section-num { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 21px; }
 
-  /* About */
-  .about-text { max-width: 62ch; color: var(--text-dim); font-size: 15.5px; }
-  .about-text p + p { margin-top: 14px; }
+  .about-text { max-width: 64ch; color: var(--text-dim); font-size: 15px; }
+  .about-text p + p { margin-top: 13px; }
   .about-text strong { color: var(--text); font-weight: 600; }
 
+  /* Experience */
+  .exp-item { padding: 20px 0; border-top: 1px solid var(--line); }
+  .exp-item:first-child { border-top: none; padding-top: 0; }
+  .exp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; }
+  .exp-role { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; }
+  .exp-date { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-faint); white-space: nowrap; }
+  .exp-org { color: var(--teal); font-size: 13.5px; margin-top: 3px; font-family: var(--font-mono); }
+  .exp-list { margin-top: 12px; padding-left: 18px; color: var(--text-dim); font-size: 14.5px; }
+  .exp-list li { margin-bottom: 7px; }
+  .exp-list li::marker { color: var(--amber); }
+
   /* Skills */
-  .skill-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 40px;
-  }
-  .skill-group-label {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--teal);
-    margin-bottom: 8px;
-  }
-  .skill-items {
-    color: var(--text-dim);
-    font-size: 14.5px;
-    line-height: 1.9;
-  }
+  .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; }
+  .skill-group-label { font-family: var(--font-mono); font-size: 12px; color: var(--teal); margin-bottom: 8px; }
+  .skill-items { color: var(--text-dim); font-size: 14px; line-height: 1.85; }
 
   /* Projects */
-  .project {
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 20px;
-  }
+  .project { padding: 24px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 130px 1fr; gap: 20px; }
   .project:first-child { border-top: none; padding-top: 0; }
-  .project-year {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-faint);
-    padding-top: 2px;
-  }
-  .project-name {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
+  .project-year { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); padding-top: 2px; }
+  .project-name { font-family: var(--font-display); font-weight: 600; font-size: 18px; margin-bottom: 6px; }
   .project-name a { text-decoration: none; }
   .project-name a:hover { color: var(--amber); }
-  .project-desc { color: var(--text-dim); font-size: 14.5px; max-width: 54ch; }
-  .project-stack {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--teal);
-    margin-top: 10px;
-  }
-  @media (max-width: 560px) {
-    .project { grid-template-columns: 1fr; gap: 6px; }
-    .skill-grid { grid-template-columns: 1fr; }
-  }
+  .project-list { margin-top: 8px; padding-left: 18px; color: var(--text-dim); font-size: 14px; }
+  .project-list li { margin-bottom: 6px; }
+  .project-list li::marker { color: var(--amber); }
+  .project-stack { font-family: var(--font-mono); font-size: 12px; color: var(--teal); margin-top: 12px; }
+  @media (max-width: 580px) { .project { grid-template-columns: 1fr; gap: 6px; } .skill-grid { grid-template-columns: 1fr; } }
 
   /* Resume */
-  .resume-box {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 24px;
-  }
-  .resume-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14.5px;
-  }
+  .resume-box { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 26px; }
+  .resume-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; gap: 16px; }
   .resume-row:last-child { border-bottom: none; }
-  .resume-label { color: var(--text-dim); }
+  .resume-label { color: var(--text-dim); white-space: nowrap; }
   .resume-value { color: var(--text); text-align: right; }
-  .resume-dl {
-    margin-top: 18px;
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-decoration: none;
-    color: var(--bg);
-    background: var(--teal);
-    padding: 9px 16px;
-    border-radius: 3px;
-  }
+  .resume-actions { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .resume-dl { font-family: var(--font-mono); font-size: 13px; text-decoration: none; padding: 9px 16px; border-radius: 3px; }
+  .resume-dl.primary { color: var(--bg); background: var(--teal); font-weight: 600; }
+  .resume-dl.secondary { border: 1px solid var(--line); color: var(--text); }
+  .resume-dl.secondary:hover { border-color: var(--amber); }
+
+  /* Certifications */
+  .cert-list { list-style: none; }
+  .cert-list li { padding: 12px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--text-dim); display: flex; gap: 10px; }
+  .cert-list li:first-child { border-top: none; }
+  .cert-list li::before { content: '✓'; color: var(--teal); font-family: var(--font-mono); flex-shrink: 0; }
+  .cert-list strong { color: var(--text); font-weight: 500; }
 
   /* Writing */
-  .writing-list a {
-    display: block;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 15px;
-    padding: 12px 0;
-    border-top: 1px solid var(--line);
-  }
+  .writing-list a { display: block; text-decoration: none; color: var(--text); font-size: 15px; padding: 12px 0; border-top: 1px solid var(--line); }
   .writing-list a:first-child { border-top: none; }
   .writing-list a:hover { color: var(--amber); }
   .writing-list .arrow { color: var(--text-faint); margin-right: 8px; font-family: var(--font-mono); }
 
-  /* Footer */
-  footer {
-    padding: 44px 0 60px;
-  }
-  footer .wrap {
-    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
-    align-items: center;
-  }
-  footer .fline {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-faint);
-  }
+  footer { padding: 44px 0 60px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+  footer .fline { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); }
   footer .flinks { display: flex; gap: 18px; font-size: 13px; }
   footer .flinks a { text-decoration: none; color: var(--text-dim); }
   footer .flinks a:hover { color: var(--amber); }
@@ -281,10 +143,10 @@
     <div class="nav-mark">rakesh.palani</div>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#resume">Resume</a>
-      <a href="#writing">Writing</a>
     </div>
   </div>
 </nav>
@@ -292,114 +154,121 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Dharmapuri, Tamil Nadu <span class="dot">·</span> open to remote roles</div>
-    <h1 class="headline">Data becomes <span class="accent">decisions.</span></h1>
-    <p class="sub">I'm Rakesh Palani, a self-taught Data Scientist and AI/ML Engineer. I build the full loop — from raw data to trained models to systems people actually use.</p>
+    <h1 class="headline">Building AI systems that ship, not slides.</h1>
+    <p class="sub">I'm Rakesh Palani — a Junior AI/ML Engineer working in generative AI, LLMs, and RAG. I build the full loop myself: data, models, backend, and the product around them.</p>
     <div class="hero-links">
       <a href="mailto:rakeshpalani2004@gmail.com" class="primary">Email me</a>
       <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener">GitHub</a>
-      <a href="#resume">Resume</a>
-      <a href="#projects">Projects</a>
+      <a href="https://linkedin.com/in/rakesh-palani-8bb1aa38b" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+    <div class="contact-line">
+      <span>+91 90927 33927</span>
+      <span>·</span>
+      <a href="mailto:rakeshpalani2004@gmail.com">rakeshpalani2004@gmail.com</a>
+      <span>·</span>
+      <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener">github.com/Rakesh051204</a>
     </div>
 
     <svg class="spark" width="100%" height="60" viewBox="0 0 720 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polyline points="0,45 60,38 120,42 180,20 240,28 300,15 360,22 420,10 480,18 540,8 600,14 660,5 720,12"
-        fill="none" stroke="var(--teal)" stroke-width="1.5" opacity="0.55"/>
-      <polyline points="0,52 60,50 120,48 180,44 240,40 300,36 360,30 420,26 480,20 540,16 600,10 660,6 720,4"
-        fill="none" stroke="var(--amber)" stroke-width="1.5" opacity="0.85"/>
+      <polyline points="0,45 60,38 120,42 180,20 240,28 300,15 360,22 420,10 480,18 540,8 600,14 660,5 720,12" fill="none" stroke="var(--teal)" stroke-width="1.5" opacity="0.55"/>
+      <polyline points="0,52 60,50 120,48 180,44 240,40 300,36 360,30 420,26 480,20 540,16 600,10 660,6 720,4" fill="none" stroke="var(--amber)" stroke-width="1.5" opacity="0.85"/>
     </svg>
   </div>
 </header>
 
 <section id="about">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2>About</h2>
-    </div>
+    <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
     <div class="about-text">
-      <p>I learned this field by building things end to end, not by following a course to the letter. That means I've had to debug my own mistakes at every layer — data pipelines, model training, evaluation, deployment — and that's where most of what I know actually came from.</p>
-      <p>Right now most of my time goes into <strong>Stoic</strong>, an AI search and answer engine, and <strong>CodeZaro</strong>, an AI-assisted code review tool. Both are built solo, from data layer to shipped product.</p>
-      <p>I graduated with a BCA in 2025 and hold a Statistics Foundations certificate from Meta via Coursera. I'm looking for AI/ML engineering or data science roles — open to remote work, with a particular interest in opportunities in Finland.</p>
+      <p>I'm a BCA graduate (CGPA 8.2/10) and self-taught AI/ML engineer. I learned this field by building things end to end and debugging my own mistakes at every layer — data pipelines, model training, evaluation, deployment — rather than by following a course to the letter.</p>
+      <p>My work centers on <strong>large language models</strong>, <strong>retrieval-augmented generation</strong>, and the infrastructure that makes them reliable in production: embeddings, semantic search, vector databases, prompt engineering, multimodal ingestion, model routing, and LLM evaluation.</p>
+      <p>I'm currently looking for AI/ML engineering or data science roles — open to remote work globally, with a particular interest in opportunities in Finland.</p>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="experience">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">02</span>
-      <h2>Skills</h2>
-    </div>
-    <div class="skill-grid">
-      <div>
-        <div class="skill-group-label">Python</div>
-        <div class="skill-items">Pandas · NumPy · Scikit-learn<br>PyTorch · TensorFlow</div>
+    <div class="section-head"><span class="section-num">02</span><h2>Experience</h2></div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Data Scientist Intern</div>
+          <div class="exp-org">KGiSL MicroCollege</div>
+        </div>
+        <div class="exp-date">Jul 2025 – Dec 2025</div>
       </div>
-      <div>
-        <div class="skill-group-label">SQL</div>
-        <div class="skill-items">Querying · cleaning<br>Pipelines · aggregation</div>
-      </div>
-      <div>
-        <div class="skill-group-label">AI / ML</div>
-        <div class="skill-items">RAG · vector search · LLMs<br>Prompt engineering · eval pipelines</div>
-      </div>
-      <div>
-        <div class="skill-group-label">Analytics</div>
-        <div class="skill-items">Power BI · Tableau<br>Statistical analysis</div>
-      </div>
+      <ul class="exp-list">
+        <li>Performed data cleaning, EDA, feature engineering, KNN imputation (k=4), and correlation analysis on a 1,339-record, 44-feature coffee-quality dataset.</li>
+        <li>Analyzed the relationship between altitude, acidity, and six coffee-quality attributes to support statistical interpretation and predictive modeling.</li>
+        <li>Built an interactive Power BI dashboard over 50,000+ IMDb records to analyze rating, genre, and release-date trends for stakeholder review.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">03</span>
-      <h2>Projects</h2>
-    </div>
+    <div class="section-head"><span class="section-num">03</span><h2>Projects</h2></div>
 
     <div class="project">
       <div class="project-year">2025 — now</div>
       <div>
-        <div class="project-name"><a href="https://cloud9-frontend.vercel.app" target="_blank" rel="noopener">Stoic</a></div>
-        <div class="project-desc">AI search and answer engine, built from scratch. RAG pipeline over web and file sources, vector memory, and an eval pipeline using LLM-as-judge scoring to track answer quality over time.</div>
-        <div class="project-stack">python · sql · pgvector · vector search</div>
+        <div class="project-name"><a href="https://github.com/Rakesh051204/Rakesh051204-cloud9-frontend" target="_blank" rel="noopener">Stoic — AI Search & Answer Platform</a></div>
+        <ul class="project-list">
+          <li>Designed and deployed an end-to-end RAG pipeline with semantic chunking, Voyage AI embeddings, and HNSW cosine-similarity search over Supabase pgvector.</li>
+          <li>Built live SSE streaming, LLM-as-judge evaluation, multimodal ingestion (images, PDF, DOCX, video via FFmpeg/Whisper), SearXNG search, and Groq model routing.</li>
+        </ul>
+        <div class="project-stack">python · fastapi · rag · llms · supabase · pgvector · groq</div>
       </div>
     </div>
 
     <div class="project">
       <div class="project-year">2025</div>
       <div>
-        <div class="project-name"><a href="https://github.com/Rakesh051204/codezaro-frontend" target="_blank" rel="noopener">CodeZaro</a></div>
-        <div class="project-desc">AI-assisted code review tool. Combines static analysis with LLM reasoning to give developers concrete, explained feedback rather than a flat list of warnings.</div>
-        <div class="project-stack">python · llm reasoning · fastapi</div>
+        <div class="project-name"><a href="https://github.com/Rakesh051204/codezaro-frontend" target="_blank" rel="noopener">CodeZaro — AI Code Review Platform</a></div>
+        <ul class="project-list">
+          <li>Built and deployed a tiered SaaS (Free/Pro/Team) with LLM-based static analysis using Groq Llama 3.3 70B and configurable usage limits.</li>
+          <li>Implemented JWT access/refresh tokens, per-tier usage enforcement, and a FastAPI model-routing layer migrating Anthropic to Groq inference; secured BYOK key storage with Fernet encryption.</li>
+        </ul>
+        <div class="project-stack">python · fastapi · rest apis · llm apis · jwt · fernet</div>
       </div>
     </div>
 
     <div class="project">
-      <div class="project-year">2024</div>
+      <div class="project-year">2025</div>
       <div>
-        <div class="project-name">IMDb Movie Analytics</div>
-        <div class="project-desc">End-to-end analytics pipeline over 25,000+ movies — ratings, genres, and regional trends, from raw SQL through to Power BI dashboards.</div>
-        <div class="project-stack">sql · power bi</div>
+        <div class="project-name">KinMax AI — Mock Interview Simulator</div>
+        <ul class="project-list">
+          <li>Created structured interview questions and LLM evaluation prompts to score candidate responses for technical clarity, accuracy, and communication.</li>
+          <li>Co-built and deployed the React/Vite application with a serverless API on Vercel.</li>
+        </ul>
+        <div class="project-stack">prompt engineering · llm apis · react · vite · vercel</div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="project">
-      <div class="project-year">2024</div>
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">04</span><h2>Skills</h2></div>
+    <div class="skill-grid">
       <div>
-        <div class="project-name">Imbalanced Dataset Prediction</div>
-        <div class="project-desc">Classification project on heavily skewed data. Compared SMOTE, oversampling, and undersampling strategies against model performance.</div>
-        <div class="project-stack">python · scikit-learn</div>
+        <div class="skill-group-label">Generative AI</div>
+        <div class="skill-items">LLMs · RAG · prompt engineering<br>embeddings · semantic chunking &amp; search<br>vector DBs · pgvector · HNSW<br>LLM-as-judge eval · multimodal AI · model routing</div>
       </div>
-    </div>
-
-    <div class="project">
-      <div class="project-year">2024</div>
       <div>
-        <div class="project-name">AI Resume Analyzer</div>
-        <div class="project-desc">NLP-based resume parser with ATS-style scoring, built to understand how automated screening tools read a resume.</div>
-        <div class="project-stack">python · nlp</div>
+        <div class="skill-group-label">Backend &amp; APIs</div>
+        <div class="skill-items">Python · FastAPI · REST APIs<br>PostgreSQL · Supabase<br>server-sent events (SSE)<br>JWT auth · Fernet encryption</div>
+      </div>
+      <div>
+        <div class="skill-group-label">ML &amp; Data</div>
+        <div class="skill-items">SQL · Pandas · NumPy · scikit-learn<br>EDA · KNN imputation · correlation analysis<br>linear regression · feature engineering<br>model evaluation · Power BI</div>
+      </div>
+      <div>
+        <div class="skill-group-label">Tools &amp; Deployment</div>
+        <div class="skill-items">Groq · Anthropic · Voyage AI<br>Llama 3.3 70B · Whisper · FFmpeg · SearXNG<br>React · Vite · Docker<br>Git · GitHub · Vercel · Render</div>
       </div>
     </div>
   </div>
@@ -407,46 +276,40 @@
 
 <section id="resume">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">04</span>
-      <h2>Resume</h2>
-    </div>
+    <div class="section-head"><span class="section-num">05</span><h2>Resume</h2></div>
     <div class="resume-box">
-      <div class="resume-row">
-        <span class="resume-label">Role</span>
-        <span class="resume-value">Data Scientist · AI/ML Engineer</span>
+      <div class="resume-row"><span class="resume-label">Title</span><span class="resume-value">Junior AI/ML Engineer</span></div>
+      <div class="resume-row"><span class="resume-label">Education</span><span class="resume-value">BCA — Vysya College of Arts &amp; Science, 2025 (CGPA 8.2/10)</span></div>
+      <div class="resume-row"><span class="resume-label">Certifications</span><span class="resume-value">Statistics Foundations (Meta) · ML Fundamentals (NVIDIA)</span></div>
+      <div class="resume-row"><span class="resume-label">LeetCode</span><span class="resume-value">234+ problems solved</span></div>
+      <div class="resume-row"><span class="resume-label">Location</span><span class="resume-value">Dharmapuri, Tamil Nadu, India</span></div>
+      <div class="resume-row"><span class="resume-label">Looking for</span><span class="resume-value">Remote AI/ML &amp; DS roles — Finland a focus</span></div>
+      <div class="resume-actions">
+        <a class="resume-dl primary" href="resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+        <a class="resume-dl secondary" href="mailto:rakeshpalani2004@gmail.com?subject=Let's%20talk">Get in touch</a>
       </div>
-      <div class="resume-row">
-        <span class="resume-label">Education</span>
-        <span class="resume-value">BCA, 2025</span>
-      </div>
-      <div class="resume-row">
-        <span class="resume-label">Certification</span>
-        <span class="resume-value">Statistics Foundations — Meta (Coursera), 2025</span>
-      </div>
-      <div class="resume-row">
-        <span class="resume-label">Location</span>
-        <span class="resume-value">Dharmapuri, Tamil Nadu, India</span>
-      </div>
-      <div class="resume-row">
-        <span class="resume-label">Looking for</span>
-        <span class="resume-value">Remote AI/ML &amp; DS roles — Finland a focus</span>
-      </div>
-      <a class="resume-dl" href="mailto:rakeshpalani2004@gmail.com?subject=Resume%20request">Request full resume →</a>
     </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">06</span><h2>Certifications &amp; achievements</h2></div>
+    <ul class="cert-list">
+      <li><strong>Statistics Foundations</strong> — Meta, via Coursera (Jul 2025)</li>
+      <li><strong>Fundamentals of Machine Learning</strong> — NVIDIA, via Whizlabs on Coursera (Jul 2025)</li>
+      <li>Solved <strong>234+ LeetCode problems</strong> across arrays, dynamic programming, hash tables, and graph algorithms</li>
+    </ul>
   </div>
 </section>
 
 <section id="writing">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-num">05</span>
-      <h2>Writing &amp; code</h2>
-    </div>
+    <div class="section-head"><span class="section-num">07</span><h2>Writing &amp; code</h2></div>
     <div class="writing-list">
       <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener"><span class="arrow">→</span>All repositories on GitHub</a>
-      <a href="https://github.com/Rakesh051204/Rakesh051204" target="_blank" rel="noopener"><span class="arrow">→</span>GitHub profile README</a>
-      <a href="https://leetcode.com/u/Uy99OnEczN/" target="_blank" rel="noopener"><span class="arrow">→</span>LeetCode — 234+ problems solved</a>
+      <a href="https://leetcode.com/u/Uy99OnEczN/" target="_blank" rel="noopener"><span class="arrow">→</span>LeetCode profile</a>
+      <a href="https://linkedin.com/in/rakesh-palani-8bb1aa38b" target="_blank" rel="noopener"><span class="arrow">→</span>LinkedIn</a>
     </div>
   </div>
 </section>
