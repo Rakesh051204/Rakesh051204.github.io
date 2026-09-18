@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakesh Palani — Data Scientist &amp; AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #10131A;
+    --surface: #171B24;
+    --surface-2: #1E2330;
+    --line: #2A3040;
+    --text: #E9E7E1;
+    --text-dim: #9AA0AE;
+    --text-faint: #626878;
+    --amber: #E8A33D;
+    --teal: #4FD1C5;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --surface-2: #EFEDE8;
+      --line: #DDDAD2;
+      --text: #181A1F;
+      --text-dim: #5C6270;
+      --text-faint: #8C90A0;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #F7F6F3;
+    --surface: #FFFFFF;
+    --surface-2: #EFEDE8;
+    --line: #DDDAD2;
+    --text: #181A1F;
+    --text-dim: #5C6270;
+    --text-faint: #8C90A0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  ::selection { background: var(--amber); color: #10131A; }
+
+  /* ---- Nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+    max-width: 780px;
+  }
+  .nav-mark {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--amber);
+  }
+  .nav-links {
+    display: flex; gap: 22px;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .nav-links a { text-decoration: none; transition: color .15s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ---- Hero ---- */
+  header.hero {
+    padding: 76px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+  }
+  .eyebrow .dot { color: var(--teal); }
+  h1.headline {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    max-width: 11ch;
+  }
+  .headline .accent { color: var(--amber); }
+  .sub {
+    margin-top: 20px;
+    max-width: 46ch;
+    color: var(--text-dim);
+    font-size: 17px;
+  }
+  .hero-links {
+    margin-top: 30px;
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .hero-links a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 3px;
+    color: var(--text);
+    transition: border-color .15s, background .15s;
+  }
+  .hero-links a:hover { border-color: var(--amber); background: var(--surface); }
+  .hero-links a.primary {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #10131A;
+    font-weight: 600;
+  }
+  .hero-links a.primary:hover { opacity: .9; background: var(--amber); }
+
+  .spark { margin-top: 40px; opacity: .9; }
+
+  /* ---- Sections ---- */
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  /* About */
+  .about-text { max-width: 62ch; color: var(--text-dim); font-size: 15.5px; }
+  .about-text p + p { margin-top: 14px; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+
+  /* Skills */
+  .skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 40px;
+  }
+  .skill-group-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .skill-items {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.9;
+  }
+
+  /* Projects */
+  .project {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+  }
+  .project:first-child { border-top: none; padding-top: 0; }
+  .project-year {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+    padding-top: 2px;
+  }
+  .project-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .project-name a { text-decoration: none; }
+  .project-name a:hover { color: var(--amber); }
+  .project-desc { color: var(--text-dim); font-size: 14.5px; max-width: 54ch; }
+  .project-stack {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--teal);
+    margin-top: 10px;
+  }
+  @media (max-width: 560px) {
+    .project { grid-template-columns: 1fr; gap: 6px; }
+    .skill-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Resume */
+  .resume-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .resume-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+  .resume-row:last-child { border-bottom: none; }
+  .resume-label { color: var(--text-dim); }
+  .resume-value { color: var(--text); text-align: right; }
+  .resume-dl {
+    margin-top: 18px;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--bg);
+    background: var(--teal);
+    padding: 9px 16px;
+    border-radius: 3px;
+  }
+
+  /* Writing */
+  .writing-list a {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 15px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .writing-list a:first-child { border-top: none; }
+  .writing-list a:hover { color: var(--amber); }
+  .writing-list .arrow { color: var(--text-faint); margin-right: 8px; font-family: var(--font-mono); }
+
+  /* Footer */
+  footer {
+    padding: 44px 0 60px;
+  }
+  footer .wrap {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
+    align-items: center;
+  }
+  footer .fline {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+  footer .flinks { display: flex; gap: 18px; font-size: 13px; }
+  footer .flinks a { text-decoration: none; color: var(--text-dim); }
+  footer .flinks a:hover { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">rakesh.palani</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#writing">Writing</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dharmapuri, Tamil Nadu <span class="dot">·</span> open to remote roles</div>
+    <h1 class="headline">Data becomes <span class="accent">decisions.</span></h1>
+    <p class="sub">I'm Rakesh Palani, a self-taught Data Scientist and AI/ML Engineer. I build the full loop — from raw data to trained models to systems people actually use.</p>
+    <div class="hero-links">
+      <a href="mailto:rakeshpalani2004@gmail.com" class="primary">Email me</a>
+      <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener">GitHub</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+    </div>
+
+    <svg class="spark" width="100%" height="60" viewBox="0 0 720 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="0,45 60,38 120,42 180,20 240,28 300,15 360,22 420,10 480,18 540,8 600,14 660,5 720,12"
+        fill="none" stroke="var(--teal)" stroke-width="1.5" opacity="0.55"/>
+      <polyline points="0,52 60,50 120,48 180,44 240,40 300,36 360,30 420,26 480,20 540,16 600,10 660,6 720,4"
+        fill="none" stroke="var(--amber)" stroke-width="1.5" opacity="0.85"/>
+    </svg>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-text">
+      <p>I learned this field by building things end to end, not by following a course to the letter. That means I've had to debug my own mistakes at every layer — data pipelines, model training, evaluation, deployment — and that's where most of what I know actually came from.</p>
+      <p>Right now most of my time goes into <strong>Stoic</strong>, an AI search and answer engine, and <strong>CodeZaro</strong>, an AI-assisted code review tool. Both are built solo, from data layer to shipped product.</p>
+      <p>I graduated with a BCA in 2025 and hold a Statistics Foundations certificate from Meta via Coursera. I'm looking for AI/ML engineering or data science roles — open to remote work, with a particular interest in opportunities in Finland.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-grid">
+      <div>
+        <div class="skill-group-label">Python</div>
+        <div class="skill-items">Pandas · NumPy · Scikit-learn<br>PyTorch · TensorFlow</div>
+      </div>
+      <div>
+        <div class="skill-group-label">SQL</div>
+        <div class="skill-items">Querying · cleaning<br>Pipelines · aggregation</div>
+      </div>
+      <div>
+        <div class="skill-group-label">AI / ML</div>
+        <div class="skill-items">RAG · vector search · LLMs<br>Prompt engineering · eval pipelines</div>
+      </div>
+      <div>
+        <div class="skill-group-label">Analytics</div>
+        <div class="skill-items">Power BI · Tableau<br>Statistical analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="project">
+      <div class="project-year">2025 — now</div>
+      <div>
+        <div class="project-name"><a href="https://cloud9-frontend.vercel.app" target="_blank" rel="noopener">Stoic</a></div>
+        <div class="project-desc">AI search and answer engine, built from scratch. RAG pipeline over web and file sources, vector memory, and an eval pipeline using LLM-as-judge scoring to track answer quality over time.</div>
+        <div class="project-stack">python · sql · pgvector · vector search</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-year">2025</div>
+      <div>
+        <div class="project-name"><a href="https://github.com/Rakesh051204/codezaro-frontend" target="_blank" rel="noopener">CodeZaro</a></div>
+        <div class="project-desc">AI-assisted code review tool. Combines static analysis with LLM reasoning to give developers concrete, explained feedback rather than a flat list of warnings.</div>
+        <div class="project-stack">python · llm reasoning · fastapi</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-year">2024</div>
+      <div>
+        <div class="project-name">IMDb Movie Analytics</div>
+        <div class="project-desc">End-to-end analytics pipeline over 25,000+ movies — ratings, genres, and regional trends, from raw SQL through to Power BI dashboards.</div>
+        <div class="project-stack">sql · power bi</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-year">2024</div>
+      <div>
+        <div class="project-name">Imbalanced Dataset Prediction</div>
+        <div class="project-desc">Classification project on heavily skewed data. Compared SMOTE, oversampling, and undersampling strategies against model performance.</div>
+        <div class="project-stack">python · scikit-learn</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-year">2024</div>
+      <div>
+        <div class="project-name">AI Resume Analyzer</div>
+        <div class="project-desc">NLP-based resume parser with ATS-style scoring, built to understand how automated screening tools read a resume.</div>
+        <div class="project-stack">python · nlp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Resume</h2>
+    </div>
+    <div class="resume-box">
+      <div class="resume-row">
+        <span class="resume-label">Role</span>
+        <span class="resume-value">Data Scientist · AI/ML Engineer</span>
+      </div>
+      <div class="resume-row">
+        <span class="resume-label">Education</span>
+        <span class="resume-value">BCA, 2025</span>
+      </div>
+      <div class="resume-row">
+        <span class="resume-label">Certification</span>
+        <span class="resume-value">Statistics Foundations — Meta (Coursera), 2025</span>
+      </div>
+      <div class="resume-row">
+        <span class="resume-label">Location</span>
+        <span class="resume-value">Dharmapuri, Tamil Nadu, India</span>
+      </div>
+      <div class="resume-row">
+        <span class="resume-label">Looking for</span>
+        <span class="resume-value">Remote AI/ML &amp; DS roles — Finland a focus</span>
+      </div>
+      <a class="resume-dl" href="mailto:rakeshpalani2004@gmail.com?subject=Resume%20request">Request full resume →</a>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Writing &amp; code</h2>
+    </div>
+    <div class="writing-list">
+      <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener"><span class="arrow">→</span>All repositories on GitHub</a>
+      <a href="https://github.com/Rakesh051204/Rakesh051204" target="_blank" rel="noopener"><span class="arrow">→</span>GitHub profile README</a>
+      <a href="https://leetcode.com/u/Uy99OnEczN/" target="_blank" rel="noopener"><span class="arrow">→</span>LeetCode — 234+ problems solved</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fline">built &amp; maintained by rakesh</div>
+    <div class="flinks">
+      <a href="mailto:rakeshpalani2004@gmail.com">Email</a>
+      <a href="https://github.com/Rakesh051204" target="_blank" rel="noopener">GitHub</a>
+      <a href="#about">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
